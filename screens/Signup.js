@@ -12,11 +12,10 @@ import {
   KeyboardAvoidingView,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import {Colors} from 'react-native/Libraries/NewAppScreen';
 
 import {COLORS, SIZES, FONTS, icons, images} from '../constants';
 
-const Signup = () => {
+const Signup = ({navigation}) => {
   const [showPassword, setshowPassword] = useState(false);
 
   const [areas, setAreas] = useState([]);
@@ -226,7 +225,7 @@ const Signup = () => {
             alignItems: 'center',
             justifyContent: 'center',
           }}
-          onPress={() => console.log('go home')}>
+          onPress={() => navigation.navigate("Home")}>
           <Text style={{color: COLORS.white, ...FONTS.body3}}>Continue</Text>
         </TouchableOpacity>
       </View>
